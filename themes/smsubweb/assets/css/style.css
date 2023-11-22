@@ -1,0 +1,136 @@
+
+/* LOGIN */
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* Typeahead Color*/
+span.twitter-typeahead .tt-suggestion:focus,
+.dropdown-item:hover,
+span.twitter-typeahead .tt-suggestion:hover {
+    text-decoration: none;
+    background-color: var(--bs-info);
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    text-decoration: none;
+    background-color: var(--bs-info);
+}
+
+/* AJUDA */
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bd-info-bg);
+    --bs-tooltip-color: var(--bs-white);
+}
+
+/* DATATABLE PAGINATOR */
+.page-link {
+    color: #0dcaf0;
+}
+
+.pagination {
+    --bs-link-hover-color: #0f4dec;
+}
+
+/* Paginação da Tabela*/
+.page-item.active .page-link {
+    color: #0f4dec;
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+}
+
+/*DEFAULT LOAD*/
+.ajax_load {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: var(--index-modal);
+}
+
+.ajax_load_box {
+    margin: auto;
+    text-align: center;
+    color: #ffffff;
+    font-weight: var(--weight-bold);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.ajax_load_box_circle {
+    border: 16px solid #e3e3e3;
+    border-top: 16px solid var(--hover-color-blue);
+    border-radius: 50%;
+    margin: auto;
+    width: 80px;
+    height: 80px;
+
+    -webkit-animation: spin 1.2s linear infinite;
+    -o-animation: spin 1.2s linear infinite;
+    animation: spin 1.2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* CARDS HOME */
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .75rem;
+}
+
+.icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+}
+
+.text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
+.text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
+.text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
+
+.card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.feature-icon-small {
+    width: 3rem;
+    height: 3rem;
+}

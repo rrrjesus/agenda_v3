@@ -1,0 +1,5 @@
+# ignore ide
+.idea/workspace.xml
+
+# Ignore a pasta source/Boot/Config.php
+source/Boot/Config.php
