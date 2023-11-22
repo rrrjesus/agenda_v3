@@ -5,102 +5,102 @@
 /**
  * DATABASE
  */
-define("CONF_DB_HOST", "ip");
-define("CONF_DB_USER", "root");
-define("CONF_DB_PASS", "");
-define("CONF_DB_NAME", "agenda");
+const CONF_DB_HOST = "ip";
+const CONF_DB_USER = "root";
+const CONF_DB_PASS = "";
+const CONF_DB_NAME = "agenda";
 
 /**
  * PROJECT URLs
  */
-define("CONF_URL_BASE", "https://ip/agenda");
-define("CONF_URL_TESTE", "https://www.localhost/agenda");
-define("CONF_URL_ADMIN", "/dashboard");
+const CONF_URL_BASE = "https://ip/agenda";
+const CONF_URL_TESTE = "https://www.localhost/agenda";
+const CONF_URL_ADMIN = "/dashboard";
 
 /**
  * SITE
  */
-define("CONF_SITE_NAME", "namesite");
-define("CONF_SITE_TITLE", "AGENDA");
-define("CONF_SITE_DESC", "Agenda Name");
-define("CONF_SITE_LANG", "pt_BR");
-define("CONF_SITE_DOMAIN", "agenda");
-define("CONF_SITE_EMAIL", "email@gmail");
-define("CONF_SITE_ADDR_STREET", "Rua Name");
-define("CONF_SITE_ADDR_NUMBER", "123");
-define("CONF_SITE_ADDR_COMPLEMENT", "andar");
-define("CONF_SITE_ADDR_NEIGHBORHOOD", "Bairro");
-define("CONF_SITE_ADDR_CITY", "Cidade");
-define("CONF_SITE_ADDR_STATE", "Estado");
-define("CONF_SITE_ADDR_ZIPCODE", "00000-000");
+const CONF_SITE_NAME = "namesite";
+const CONF_SITE_TITLE = "AGENDA";
+const CONF_SITE_DESC = "Agenda Name";
+const CONF_SITE_LANG = "pt_BR";
+const CONF_SITE_DOMAIN = "agenda";
+const CONF_SITE_EMAIL = "email@gmail";
+const CONF_SITE_ADDR_STREET = "Rua Name";
+const CONF_SITE_ADDR_NUMBER = "123";
+const CONF_SITE_ADDR_COMPLEMENT = "andar";
+const CONF_SITE_ADDR_NEIGHBORHOOD = "Bairro";
+const CONF_SITE_ADDR_CITY = "Cidade";
+const CONF_SITE_ADDR_STATE = "Estado";
+const CONF_SITE_ADDR_ZIPCODE = "00000-000";
 
 /**
  * COLORS
  */
-define("CONF_SITE_BASECOLOR","blue");
+const CONF_SITE_BASECOLOR = "blue";
 //define("CONF_SITE_BASECOLOR_APP","red");
 
 /**
  * SOCIAL
  */
-define("CONF_SOCIAL_TWITTER_CREATOR", "");
-define("CONF_SOCIAL_TWITTER_PUBLISHER", "");
-define("CONF_SOCIAL_FACEBOOK_APP", "");
-define("CONF_SOCIAL_FACEBOOK_PAGE", "");
-define("CONF_SOCIAL_FACEBOOK_AUTHOR", "");
-define("CONF_SOCIAL_GOOGLE_PAGE", "");
-define("CONF_SOCIAL_GOOGLE_AUTHOR", "");
-define("CONF_SOCIAL_INSTAGRAM_PAGE", "");
-define("CONF_SOCIAL_YOUTUBE_PAGE", "");
+const CONF_SOCIAL_TWITTER_CREATOR = "";
+const CONF_SOCIAL_TWITTER_PUBLISHER = "";
+const CONF_SOCIAL_FACEBOOK_APP = "";
+const CONF_SOCIAL_FACEBOOK_PAGE = "";
+const CONF_SOCIAL_FACEBOOK_AUTHOR = "";
+const CONF_SOCIAL_GOOGLE_PAGE = "";
+const CONF_SOCIAL_GOOGLE_AUTHOR = "";
+const CONF_SOCIAL_INSTAGRAM_PAGE = "";
+const CONF_SOCIAL_YOUTUBE_PAGE = "";
 
 /**
  * DATES
  */
-define("CONF_DATE_BR", "d/m/Y H:i:s");
-define("CONF_DATE_APP", "Y-m-d H:i:s");
+const CONF_DATE_BR = "d/m/Y H:i:s";
+const CONF_DATE_APP = "Y-m-d H:i:s";
 
 /**
  * PASSWORD
  */
-define("CONF_PASSWD_MIN_LEN", 8);
-define("CONF_PASSWD_MAX_LEN", 40);
-define("CONF_PASSWD_ALGO", PASSWORD_DEFAULT);
-define("CONF_PASSWD_OPTION", ["cost" => 10]);
+const CONF_PASSWD_MIN_LEN = 8;
+const CONF_PASSWD_MAX_LEN = 40;
+const CONF_PASSWD_ALGO = PASSWORD_DEFAULT;
+const CONF_PASSWD_OPTION = ["cost" => 10];
 
 /**
  * VIEW
  */
-define("CONF_VIEW_PATH", __DIR__ . "/../../shared/views");
-define("CONF_VIEW_EXT", "php");
-define("CONF_VIEW_THEME", "smsubweb");
-define("CONF_VIEW_THEME_APP", "smsubapp");
+const CONF_VIEW_PATH = __DIR__ . "/../../shared/views";
+const CONF_VIEW_EXT = "php";
+const CONF_VIEW_THEME = "smsubweb";
+const CONF_VIEW_THEME_APP = "smsubapp";
 
 /**
  * UPLOAD
  */
-define("CONF_UPLOAD_DIR", "storage");
-define("CONF_UPLOAD_IMAGE_DIR", "images");
-define("CONF_UPLOAD_FILE_DIR", "files");
-define("CONF_UPLOAD_MEDIA_DIR", "medias");
+const CONF_UPLOAD_DIR = "storage";
+const CONF_UPLOAD_IMAGE_DIR = "images";
+const CONF_UPLOAD_FILE_DIR = "files";
+const CONF_UPLOAD_MEDIA_DIR = "medias";
 
 /**
  * IMAGES
  */
-define("CONF_IMAGE_CACHE", CONF_UPLOAD_DIR . "/" . CONF_UPLOAD_IMAGE_DIR . "/cache");
-define("CONF_IMAGE_SIZE", 2000);
-define("CONF_IMAGE_QUALITY", ["jpg" => 75, "png" => 5]);
+const CONF_IMAGE_CACHE = CONF_UPLOAD_DIR . "/" . CONF_UPLOAD_IMAGE_DIR . "/cache";
+const CONF_IMAGE_SIZE = 2000;
+const CONF_IMAGE_QUALITY = ["jpg" => 75, "png" => 5];
 
 /**
  * MAIL
  */
-define("CONF_MAIL_HOST", "smtp.sendgrid.net");
-define("CONF_MAIL_PORT", "587");
-define("CONF_MAIL_USER", "apikey");
-define("CONF_MAIL_PASS", "");
-define("CONF_MAIL_SENDER", ["name" => "", "address" => "email@gmail.com"]);
-define("CONF_MAIL_SUPORT", "email@email");
-define("CONF_MAIL_OPTION_LANG", "br");
-define("CONF_MAIL_OPTION_HTML", true);
-define("CONF_MAIL_OPTION_AUTH", true);
-define("CONF_MAIL_OPTION_SECURE", "tls");
-define("CONF_MAIL_OPTION_CHARSET", "utf-8");
+const CONF_MAIL_HOST = "smtp.sendgrid.net";
+const CONF_MAIL_PORT = "587";
+const CONF_MAIL_USER = "apikey";
+const CONF_MAIL_PASS = "";
+const CONF_MAIL_SENDER = ["name" => "", "address" => "email@gmail.com"];
+const CONF_MAIL_SUPORT = "email@email";
+const CONF_MAIL_OPTION_LANG = "br";
+const CONF_MAIL_OPTION_HTML = true;
+const CONF_MAIL_OPTION_AUTH = true;
+const CONF_MAIL_OPTION_SECURE = "tls";
+const CONF_MAIL_OPTION_CHARSET = "utf-8";

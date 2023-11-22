@@ -1,3 +1,7 @@
+<?php
+$user = (new \Source\Models\Auth())->user();
+?>
+
 <!-- SMSUB AGENDA -->
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -131,72 +135,61 @@
         </div>
 
 
+
         <!--CONTENT-->
         <main class="col-lg-10 col-md-10 col-sm-10 ">
+            <aside class="dash_sidebar">
+                <article class="dash_sidebar_user">
+                    <?php
+                    $photo = user()->photo();
+                    $userPhoto = ($photo ? image($photo, 300, 300) : theme("/assets/images/avatar.jpg", CONF_VIEW_THEME_APP));
+                    ?>
+                    <div><img class="dash_sidebar_user_thumb" src="<?= $userPhoto; ?>" alt="" title=""/></div>
+                    <h3 class="dash_sidebar_user_name">
+                        <a href="<?= url("/admin/users/user/" . user()->id); ?>"><?= user()->fullName(); ?></a>
+                    </h3>
+                </article>
 
+                <ul class="dash_sidebar_nav">
+                    <?php
+                    $nav = function ($icon, $href, $title) use ($app) {
+                        $active = (explode("/", $app)[0] == explode("/", $href)[0] ? "active" : null);
+                        $url = url("/admin/{$href}");
+                        return "<li class=\"dash_sidebar_nav_li {$active}\"><a class=\"icon-{$icon}\" href=\"{$url}\">{$title}</a></li>";
+                    };
 
+                    echo $nav("home", "dash", "Dashboard");
+                    echo $nav("coffee", "control/home", "Control");
+                    echo $nav("pencil-square-o", "blog/home", "Blog");
+                    echo $nav("comments-o", "faq/home", "FAQs");
+                    echo $nav("user", "users/home", "Usuários");
+                    echo "<li class=\"dash_sidebar_nav_li\"><a class=\"icon-link\" href=\"" . url() . " \" target=\"_blank\">Ver site</a></li>";
 
-
-
-
-
-
-<div class="dash">
-    <aside class="dash_sidebar">
-        <article class="dash_sidebar_user">
-            <?php
-            $photo = user()->photo();
-            $userPhoto = ($photo ? image($photo, 300, 300) : theme("/assets/images/avatar.jpg", CONF_VIEW_THEME_APP));
-            ?>
-            <div><img class="dash_sidebar_user_thumb" src="<?= $userPhoto; ?>" alt="" title=""/></div>
-            <h3 class="dash_sidebar_user_name">
-                <a href="<?= url("/admin/users/user/" . user()->id); ?>"><?= user()->fullName(); ?></a>
-            </h3>
-        </article>
-
-        <ul class="dash_sidebar_nav">
-            <?php
-            $nav = function ($icon, $href, $title) use ($app) {
-                $active = (explode("/", $app)[0] == explode("/", $href)[0] ? "active" : null);
-                $url = url("/admin/{$href}");
-                return "<li class=\"dash_sidebar_nav_li {$active}\"><a class=\"icon-{$icon}\" href=\"{$url}\">{$title}</a></li>";
-            };
-
-            echo $nav("home", "dash", "Dashboard");
-            echo $nav("coffee", "control/home", "Control");
-            echo $nav("pencil-square-o", "blog/home", "Blog");
-            echo $nav("comments-o", "faq/home", "FAQs");
-            echo $nav("user", "users/home", "Usuários");
-            echo "<li class=\"dash_sidebar_nav_li\"><a class=\"icon-link\" href=\"" . url() . " \" target=\"_blank\">Ver site</a></li>";
-
-            echo $nav("sign-out on_mobile", "logoff", "Sair");
-            ?>
-        </ul>
-    </aside>
-    <section class="dash_content">
-        <div class="dash_userbar">
-            <div class="dash_userbar_box">
-                <div class="dash_content_box">
-                    <h1 class="icon-cog transition"><a href="<?= url("/admin/dash"); ?>">Café<b>Admin</b></a></h1>
-                    <div class="dash_userbar_box_bar">
-                        <span class="notification_center_open icon-bell"
-                              data-count="<?= url("/admin/notifications/count"); ?>"
-                              data-notify="<?= url("/admin/notifications/list"); ?>">0</span>
-                        <span class="no_mobile icon-clock-o"><?= date("d/m H\hi"); ?></span>
-                        <a class="no_mobile icon-sign-out" title="Sair" href="<?= url("/admin/logoff"); ?>">Sair</a>
-                        <span class="icon-menu icon-notext mobile_menu transition"></span>
+                    echo $nav("sign-out on_mobile", "logoff", "Sair");
+                    ?>
+                </ul>
+            </aside>
+            <section class="dash_content">
+                <div class="dash_userbar">
+                    <div class="dash_userbar_box">
+                        <div class="dash_content_box">
+                            <h1 class="icon-cog transition"><a href="<?= url("/admin/dash"); ?>">Café<b>Admin</b></a></h1>
+                            <div class="dash_userbar_box_bar">
+                                <span class="notification_center_open icon-bell"
+                                      data-count="<?= url("/admin/notifications/count"); ?>"
+                                      data-notify="<?= url("/admin/notifications/list"); ?>">0</span>
+                                <span class="no_mobile icon-clock-o"><?= date("d/m H\hi"); ?></span>
+                                <a class="no_mobile icon-sign-out" title="Sair" href="<?= url("/admin/logoff"); ?>">Sair</a>
+                                <span class="icon-menu icon-notext mobile_menu transition"></span>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="notification_center"></div>
                 </div>
-            </div>
 
-            <div class="notification_center"></div>
-        </div>
-
-        <div class="dash_content_box">
             <?= $this->section("content"); ?>
-        </div>
-    </section>
-</div>
+        </main>
 
             <footer class="bd-footer py-4 py-md-5 bg-body-tertiary text-center">
                 <div class="container-xl py-4 py-md-5 px-4 px-md-3 text-body-secondary">
@@ -260,13 +253,12 @@
 </div>
 
 <!-- Desenvolvido por Rodolfo R. R. de Jesus - rrrjesus@smsub.prefeitura.sp.gov.br -->
-
+<script src="<?= theme("/../".CONF_VIEW_THEME_APP."/assets/scripts.js"); ?>"></script>
 <script src="<?= url("/shared/scripts/jquery.min.js"); ?>"></script>
 <script src="<?= url("/shared/scripts/jquery.form.js"); ?>"></script>
 <script src="<?= url("/shared/scripts/jquery-ui.js"); ?>"></script>
 <script src="<?= url("/shared/scripts/jquery.mask.js"); ?>"></script>
 <script src="<?= url("/shared/scripts/tinymce/tinymce.min.js"); ?>"></script>
-<script src="<?= theme("/assets/js/scripts.js", CONF_VIEW_THEME_APP); ?>"></script>
 <?= $this->section("scripts"); ?>
 
 </body>
